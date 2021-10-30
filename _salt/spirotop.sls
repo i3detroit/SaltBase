@@ -1,3 +1,4 @@
 prod:
-  '*':
-    - salt
+  'not godbox':
+    - match: compound
+    - minion

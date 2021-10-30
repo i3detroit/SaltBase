@@ -10,6 +10,9 @@ steps:
       from_secret: SPIRO_URL
     SPIRO_TOKEN:
       from_secret: SPIRO_TOKEN
+  when:
+    branch:
+    - trunk
   commands:
   - spiro-deploy core trunk --highstate
   

@@ -5,6 +5,11 @@ name: default
 steps:
 - name: deploy
   image: registry.gitlab.com/spirostack/spiro-deploy:master
+  environment:
+    SPIRO_URL:
+      from_secret: SPIRO_URL
+    SPIRO_TOKEN:
+      from_secret: SPIRO_TOKEN
   commands:
   - spiro-deploy core trunk --no-highstate
   

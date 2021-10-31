@@ -23,4 +23,4 @@ if __name__ == '__main__':
             host_fig = fig.renderText(f'{hostname}.{domain}')
             center_w = max(map(len, host_fig.split('\n')))
             with open(os.path.join(motd_path, f'{hostname}.motd'), 'w') as f:
-                f.write(f'{host_fig}{description.center(center_w)}\n')
+                f.write(f'{host_fig}{description.center(center_w)}\n\n')

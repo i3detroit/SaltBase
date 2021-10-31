@@ -1,6 +1,6 @@
 prod:
-  'not godbox':
+  "not godbox":
     - match: compound
     - minion
-  '*':
+  "*":
     - motd

@@ -3,6 +3,14 @@ type: docker
 name: default
 
 steps:
+- name: motd
+  image: python:3
+  commands:
+  - mkdir -p _salt/motds
+  - cd motd-generator
+  - pip install wheel
+  - pip install -r requirements.txt
+  - python motd-generator.py ../_salt/motds
 - name: deploy
   image: registry.gitlab.com/spirostack/spiro-deploy:master
   environment:
@@ -15,4 +23,3 @@ steps:
     - trunk
   commands:
   - spiro-deploy core trunk --highstate
-  

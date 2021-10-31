@@ -1,4 +1,4 @@
-prod:
+trunk:
   "not godbox":
     - match: compound
     - minion
